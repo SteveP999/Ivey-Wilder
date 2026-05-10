@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ivey-wilder-main-character",
+    "num": "01",
+    "title": "Main Character",
+    "artist": "Ivey Wilder",
+    "album": "...For Hard Truths",
+    "albumCover": "images/covers/ivey-wilder-for-hard-thruths-ALBUM-cover.png",
+    "type": "album track",
+    "isLatest": true,
+    "cover": "images/covers/ivey-wilder-main-character-cover.png",
+    "audio": "https://www.dropbox.com/scl/fi/tl773rvzo5yt77nxwoivk/ivey-wilder-main-character-mp3.mp3?rlkey=wbzx893crsupp6u7puh5glrt4&raw=1",
+    "audioSrc": "https://www.dropbox.com/scl/fi/tl773rvzo5yt77nxwoivk/ivey-wilder-main-character-mp3.mp3?rlkey=wbzx893crsupp6u7puh5glrt4&raw=1",
+    "videos": [],
+    "includeOnRadio": true,
+    "includeOnHomepage": true,
+    "explicit": false,
+    "tags": []
+  }
+]
