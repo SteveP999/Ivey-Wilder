@@ -366,7 +366,6 @@ a{color:inherit}
 .photo-strip img.missing{display:none}
 .photo-strip.empty{display:none}
 
-
 .video-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -386,23 +385,16 @@ a{color:inherit}
   border-color:var(--accent);
   background:rgba(0,0,0,.34);
 }
-.video-card-art{
+.video-embed-wrap{
   position:relative;
   aspect-ratio:16 / 9;
   overflow:hidden;
   background:#000;
 }
-.video-card-art img{
+.video-embed-wrap iframe{
   width:100%;
   height:100%;
-  object-fit:cover;
   display:block;
-  filter:brightness(.82);
-  transition:filter .25s,transform .35s;
-}
-.video-card:hover img{
-  filter:brightness(1);
-  transform:scale(1.03);
 }
 .video-card-title{
   font-family:'Bebas Neue',serif;
@@ -410,6 +402,9 @@ a{color:inherit}
   color:var(--white);
   padding:1rem 1rem .15rem;
   text-transform:uppercase;
+}
+.video-card-actions{
+  padding:.45rem 1rem 1rem;
 }
 .video-card-sub{
   font-family:'Barlow Condensed',serif;
@@ -877,7 +872,7 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:4rem 2re
 
 <div id="albums"></div>
 
-<section id="video-stage" class="lower-video-section"><div class="section-header"><div class="section-eyebrow">Latest Video</div><h2 class="section-title">Video Coming Soon</h2><div class="rule"></div></div><div class="feature-video"><div id="video-render" class="video-panel"></div></div></section>
+<section id="video-stage" class="lower-video-section"><div class="section-header"><div class="section-eyebrow">Watch</div><h2 class="section-title">Videos</h2><div class="rule"></div></div><div class="feature-video"><div id="video-render" class="video-panel"></div></div></section>
 
 <section id="bio">
   <div class="section-header">
@@ -939,6 +934,26 @@ function videoUrl(song) {
   if (!videos.length) return '';
   return videos[0].youtube || videos[0].url || videos[0].href || '';
 }
+function youtubeEmbedUrl(url) {
+  const value = String(url || '').trim();
+  if (!value) return '';
+  try {
+    const u = new URL(value);
+    let id = '';
+    if (u.hostname.includes('youtu.be')) {
+      id = u.pathname.replace('/', '');
+    } else if (u.searchParams.get('v')) {
+      id = u.searchParams.get('v');
+    } else if (u.pathname.includes('/embed/')) {
+      id = u.pathname.split('/embed/')[1].split('/')[0];
+    } else if (u.pathname.includes('/shorts/')) {
+      id = u.pathname.split('/shorts/')[1].split('/')[0];
+    }
+    return id ? `https://www.youtube.com/embed/${id}` : value;
+  } catch (e) {
+    return value;
+  }
+}
 function videoMarkup(song) {
   const url = videoUrl(song);
   if (!url) return '<span class="track-badge">Video Coming Soon</span>';
@@ -981,14 +996,20 @@ function renderVideo() {
   container.innerHTML = `
     <div class="video-grid">
       ${videoSongs.map(song => `
-        <a class="video-card" href="${esc(videoUrl(song))}" target="_blank" rel="noreferrer">
-          <div class="video-card-art">
-            <img src="${esc(song.cover || song.albumCover || '')}" alt="${esc(song.title)} video">
-            <div class="video-play-overlay"><div class="video-play-circle">&#9654;</div></div>
+        <div class="video-card video-card-embed">
+          <div class="video-embed-wrap">
+            <iframe
+              src="${esc(youtubeEmbedUrl(videoUrl(song)))}"
+              title="${esc(song.title)} video"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
           </div>
           <div class="video-card-title">${esc(song.title)}</div>
-          <div class="video-card-sub">Watch Video</div>
-        </a>
+          <div class="video-card-actions">
+            <a class="track-badge" href="${esc(videoUrl(song))}" target="_blank" rel="noreferrer">Watch on YouTube</a>
+          </div>
+        </div>
       `).join('')}
     </div>
   `;
