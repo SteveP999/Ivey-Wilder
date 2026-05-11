@@ -280,14 +280,14 @@ a{color:inherit}
 .release-wall{
   width:100%;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(210px,240px));
+  grid-template-columns:repeat(4,minmax(0,1fr));
   justify-content:center;
-  gap:1.7rem;
+  gap:1rem;
 }
 .release-card{
   cursor:pointer;
-  max-width:240px;
-  text-align:center;
+  min-width:0;
+  text-align:left;
 }
 .release-art{
   position:relative;
@@ -365,55 +365,6 @@ a{color:inherit}
 .photo-strip img:hover{filter:brightness(1) saturate(1);transform:scale(1.03)}
 .photo-strip img.missing{display:none}
 .photo-strip.empty{display:none}
-
-.video-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:1.5rem;
-  padding:1.5rem;
-}
-.video-card{
-  display:block;
-  text-decoration:none;
-  color:inherit;
-  border:1px solid var(--line);
-  background:rgba(0,0,0,.22);
-  transition:transform .2s,border-color .2s,background .2s;
-}
-.video-card:hover{
-  transform:translateY(-2px);
-  border-color:var(--accent);
-  background:rgba(0,0,0,.34);
-}
-.video-embed-wrap{
-  position:relative;
-  aspect-ratio:16 / 9;
-  overflow:hidden;
-  background:#000;
-}
-.video-embed-wrap iframe{
-  width:100%;
-  height:100%;
-  display:block;
-}
-.video-card-title{
-  font-family:'Bebas Neue',serif;
-  font-size:1.2rem;
-  color:var(--white);
-  padding:1rem 1rem .15rem;
-  text-transform:uppercase;
-}
-.video-card-actions{
-  padding:.45rem 1rem 1rem;
-}
-.video-card-sub{
-  font-family:'Barlow Condensed',serif;
-  font-size:.62rem;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  color:var(--accent);
-  padding:0 1rem 1rem;
-}
 
 #player{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:color-mix(in srgb,var(--black) 97%, transparent);border-top:1px solid var(--line);backdrop-filter:blur(16px);grid-template-columns:auto 1fr auto;align-items:center;gap:1.5rem;padding:.8rem 2rem;transform:translateY(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
 #player.visible{display:grid;transform:translateY(0)}
@@ -573,15 +524,15 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:4rem 2re
 .release-wall{
   width:100%;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(210px,240px));
+  grid-template-columns:repeat(4,minmax(0,1fr));
   justify-content:center;
-  gap:1.7rem;
+  gap:1rem;
 }
 
 .release-card{
   cursor:pointer;
-  max-width:240px;
-  text-align:center;
+  min-width:0;
+  text-align:left;
 }
 
 .release-art{
@@ -594,9 +545,9 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:4rem 2re
 }
 
 .release-title{
-  font-size:1.08rem;
-  margin-top:.85rem;
-  line-height:1.15;
+  font-size:.95rem;
+  margin-top:.6rem;
+  line-height:1.12;
 }
 
 .release-album{
@@ -782,7 +733,9 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:4rem 2re
 
 .album-track-art-block{
   grid-column:1 / -1 !important;
-  margin-top:2.6rem !important;
+  width:100% !important;
+  max-width:1040px !important;
+  margin:2.6rem auto 0 !important;
   padding-top:2rem !important;
   border-top:1px solid var(--faded-line) !important;
 }
@@ -798,14 +751,15 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:4rem 2re
 
 .release-wall{
   display:grid !important;
-  grid-template-columns:repeat(auto-fit,minmax(210px,240px)) !important;
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
   justify-content:center !important;
-  gap:1.7rem !important;
+  gap:1rem !important;
 }
 
 .release-card{
-  max-width:240px !important;
-  text-align:center !important;
+  min-width:0 !important;
+  max-width:none !important;
+  text-align:left !important;
 }
 
 @media(max-width:900px){
@@ -828,14 +782,39 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:4rem 2re
   .latest-inner,.album-layout,.album-layout.cover-right{grid-template-columns:1fr}
   .album-layout.cover-right .album-cover-wrap,.album-layout.cover-right .album-info{grid-column:auto;grid-row:auto}
 
-  .release-wall{grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1.15rem;justify-content:center}
-  .release-card{max-width:none;text-align:center}
+  .release-wall{grid-template-columns:repeat(3,minmax(0,1fr)) !important;gap:1rem}
+  .release-card{max-width:none}
   #albums,.lower-video-section{background-attachment:scroll}
   .photo-strip{grid-template-columns:1fr;height:auto}
   .photo-strip img{height:340px}
   #player{grid-template-columns:1fr;padding:.9rem 1rem}
   .p-extra{display:none}
 }
+
+/* v3.5 ALBUM TRACK SIZE LOCK - Vincent Cole standard */
+.release-wall{
+  display:grid !important;
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  gap:1rem !important;
+  justify-content:center !important;
+}
+.release-card{
+  min-width:0 !important;
+  max-width:none !important;
+  text-align:left !important;
+}
+.album-track-art-block{
+  max-width:1040px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+@media(max-width:900px){
+  .release-wall{grid-template-columns:repeat(3,minmax(0,1fr)) !important;}
+}
+@media(max-width:768px){
+  .release-wall{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:.85rem !important;}
+}
+
 </style>
 </head>
 <body>
@@ -872,7 +851,7 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:4rem 2re
 
 <div id="albums"></div>
 
-<section id="video-stage" class="lower-video-section"><div class="section-header"><div class="section-eyebrow">Watch</div><h2 class="section-title">Videos</h2><div class="rule"></div></div><div class="feature-video"><div id="video-render" class="video-panel"></div></div></section>
+<section id="video-stage" class="lower-video-section"><div class="section-header"><div class="section-eyebrow">Latest Video</div><h2 class="section-title">Video Coming Soon</h2><div class="rule"></div></div><div class="feature-video"><div id="video-render" class="video-panel"></div></div></section>
 
 <section id="bio">
   <div class="section-header">
@@ -918,7 +897,7 @@ footer{background:var(--black);border-top:1px solid var(--line);padding:4rem 2re
 </div>
 
 <audio id="audio"></audio>
-<script id="artist-data" type="application/json">{"artist": {"id": "ivey-wilder", "name": "Ivey Wilder", "genre": "Alt. Rock / Hard Rock", "tagline": "Ivey Wilder is part of the Hello Texas Records roster.", "bio": "Ivey Wilder is part of the Hello Texas Records roster.", "theme": "ivey_wilder", "logo": "images/logos/ivey-wilder-logo.png", "hero": "images/artist/ivey-wilder-hero-photo.png", "discographyBg": "images/artist/ivey-wilder-discography-bg.png", "videoBg": "images/artist/ivey-wilder-video-bg.png", "photos": ["images/artist/ivey-wilder-photo-1.png", "images/artist/ivey-wilder-photo-2.png", "images/artist/ivey-wilder-photo-3.png"]}, "latest": {"title": "Burning Bridges", "artist": "Ivey Wilder", "album": "...For Hard Truths", "type": "Latest Single", "cover": "images/covers/ivey-wilder-burning-bridges-cover.png", "image": "images/covers/ivey-wilder-burning-bridges-cover.png", "audio": "https://www.dropbox.com/scl/fi/yn1bx0irycyb147ngey9j/ivey-wilder-burning-bridges-mp3.mp3?rlkey=yc3uian4ji5sc8j3kkmxuce4o&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/yn1bx0irycyb147ngey9j/ivey-wilder-burning-bridges-mp3.mp3?rlkey=yc3uian4ji5sc8j3kkmxuce4o&raw=1", "videos": [{"title": "burning bridges", "youtube": "https://youtu.be/GpTztr6jvBU", "order": 1}]}, "songs": [{"id": "ivey-wilder-main-character", "num": "01", "title": "Main Character", "artist": "Ivey Wilder", "album": "...For Hard Truths", "trackNumber": 1, "albumOrder": 1, "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-main-character-cover.png", "audio": "https://www.dropbox.com/scl/fi/tl773rvzo5yt77nxwoivk/ivey-wilder-main-character-mp3.mp3?rlkey=wbzx893crsupp6u7puh5glrt4&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/tl773rvzo5yt77nxwoivk/ivey-wilder-main-character-mp3.mp3?rlkey=wbzx893crsupp6u7puh5glrt4&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-lookin-okay", "num": "02", "title": "Lookin' Okay", "artist": "Ivey Wilder", "album": "...For Hard Truths", "trackNumber": 2, "albumOrder": 2, "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-lookin-okay-cover.png", "audio": "https://www.dropbox.com/scl/fi/kpztjnqnyfbksa8d5h2b9/ivey-wilder-lookin-okay-mp3-rock.mp3?rlkey=k2ypg4m5rqsb6dwntp1i4bn8j&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/kpztjnqnyfbksa8d5h2b9/ivey-wilder-lookin-okay-mp3-rock.mp3?rlkey=k2ypg4m5rqsb6dwntp1i4bn8j&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-people-pleaser-rest-in-peace", "num": "03", "title": "People Pleaser (Rest In Peace)", "artist": "Ivey Wilder", "album": "...For Hard Truths", "trackNumber": 3, "albumOrder": 3, "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-people-pleaser-rest-in-peace-cover.png", "audio": "https://www.dropbox.com/scl/fi/lp84m87nvizsdltwgvseg/ivey-wilder-people-pleaser-mp3.mp3?rlkey=i1tg5nl8ury8u2aa3n3tldlkc&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/lp84m87nvizsdltwgvseg/ivey-wilder-people-pleaser-mp3.mp3?rlkey=i1tg5nl8ury8u2aa3n3tldlkc&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-chaos-comfort", "num": "04", "title": "Chaos Comfort", "artist": "Ivey Wilder", "album": "...For Hard Truths", "trackNumber": 4, "albumOrder": 4, "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-chaos-comfort-cover.png", "audio": "https://www.dropbox.com/scl/fi/31dcaq6umpqeuztyzfnl5/ivey-wilder-chaos-comfort-mp3.mp3?rlkey=x76ge48y5098gcorjauky9un4&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/31dcaq6umpqeuztyzfnl5/ivey-wilder-chaos-comfort-mp3.mp3?rlkey=x76ge48y5098gcorjauky9un4&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-same-damn-thing", "num": "05", "title": "Same Damn Thing", "artist": "Ivey Wilder", "album": "...For Hard Truths", "trackNumber": 5, "albumOrder": 5, "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-same-damn-thing-cover.png", "audio": "https://www.dropbox.com/scl/fi/4xbuslph1n4e8ocbfkc5e/ivey-wilder-same-damn-thing-mp3.mp3?rlkey=javre2g419yanbmha1u47frqx&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/4xbuslph1n4e8ocbfkc5e/ivey-wilder-same-damn-thing-mp3.mp3?rlkey=javre2g419yanbmha1u47frqx&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-always-the-almost", "num": "06", "title": "Always the Almost", "artist": "Ivey Wilder", "album": "...For Hard Truths", "trackNumber": 6, "albumOrder": 6, "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-always-the-almost-cover.png", "audio": "https://www.dropbox.com/scl/fi/euaozyd411gkpifibvz6k/ivey-wilder-always-the-almost-mp3-rock.mp3?rlkey=fe0kyh12vjozq4crpegy7j2to&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/euaozyd411gkpifibvz6k/ivey-wilder-always-the-almost-mp3-rock.mp3?rlkey=fe0kyh12vjozq4crpegy7j2to&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-burning-bridges", "num": "07", "title": "Burning Bridges", "artist": "Ivey Wilder", "album": "...For Hard Truths", "trackNumber": 7, "albumOrder": 7, "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": true, "cover": "images/covers/ivey-wilder-burning-bridges-cover.png", "audio": "https://www.dropbox.com/scl/fi/yn1bx0irycyb147ngey9j/ivey-wilder-burning-bridges-mp3.mp3?rlkey=yc3uian4ji5sc8j3kkmxuce4o&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/yn1bx0irycyb147ngey9j/ivey-wilder-burning-bridges-mp3.mp3?rlkey=yc3uian4ji5sc8j3kkmxuce4o&raw=1", "videos": [{"title": "burning bridges", "youtube": "https://youtu.be/GpTztr6jvBU", "order": 1}], "includeOnRadio": true, "includeOnHomepage": true, "explicit": false, "tags": []}, {"id": "ivey-wilder-glass-houses", "num": "08", "title": "Glass Houses", "artist": "Ivey Wilder", "album": "...For Hard Truths", "trackNumber": 8, "albumOrder": 8, "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-glass-houses-cover.png", "audio": "https://www.dropbox.com/scl/fi/yuzel13k3dokdb6nfrub4/ivey-wilder-glass-houses-mp3.mp3?rlkey=n8b0ve74paf1vkh3v5ckowd8i&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/yuzel13k3dokdb6nfrub4/ivey-wilder-glass-houses-mp3.mp3?rlkey=n8b0ve74paf1vkh3v5ckowd8i&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-static", "num": "09", "title": "Static", "artist": "Ivey Wilder", "album": "...For Hard Truths", "trackNumber": 9, "albumOrder": 9, "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-static-cover.png", "audio": "https://www.dropbox.com/scl/fi/bmb93jc6gifxeuu57p442/avery-ivey-static-mp3.mp3?rlkey=3ic9cwhrcvb8whd3iuq68os2j&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/bmb93jc6gifxeuu57p442/avery-ivey-static-mp3.mp3?rlkey=3ic9cwhrcvb8whd3iuq68os2j&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-the-long-way-down", "num": "10", "title": "The Long Way Down", "artist": "Ivey Wilder", "album": "...For Hard Truths", "trackNumber": 10, "albumOrder": 10, "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-the-long-way-down-cover.png", "audio": "https://www.dropbox.com/scl/fi/8abqdzad99uchgkwgzl2q/avery-ivey-the-long-way-down-mp3.mp3?rlkey=fvc0ioxg5kyv6fb4cxd5qxhax&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/8abqdzad99uchgkwgzl2q/avery-ivey-the-long-way-down-mp3.mp3?rlkey=fvc0ioxg5kyv6fb4cxd5qxhax&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-can-t-take-it-back", "num": "11", "title": "Can't Take It Back", "artist": "Ivey Wilder", "album": "...For Hard Truths", "trackNumber": 11, "albumOrder": 11, "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-can-t-take-it-back-cover.png", "audio": "https://www.dropbox.com/scl/fi/a0ulheloq4fh2mfyjm7mj/avery-ivey-cant-take-it-back.mp3.mp3?rlkey=u5u2pi7hn0s2f67nz0gt59c7s&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/a0ulheloq4fh2mfyjm7mj/avery-ivey-cant-take-it-back.mp3.mp3?rlkey=u5u2pi7hn0s2f67nz0gt59c7s&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-almost-apologies", "num": "12", "title": "Almost Apologies", "artist": "Ivey Wilder", "album": "...For Hard Truths", "trackNumber": 12, "albumOrder": 12, "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-almost-apologies-cover.png", "audio": "https://www.dropbox.com/scl/fi/7x08t7adaa8svvwhtf9kl/avery-ivey-almost-apologies.mp3.mp3?rlkey=chff1lxg2zy4weo10yjl3coub&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/7x08t7adaa8svvwhtf9kl/avery-ivey-almost-apologies.mp3.mp3?rlkey=chff1lxg2zy4weo10yjl3coub&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-i-m-the-problem", "num": "13", "title": "I'm the Problem", "artist": "Ivey Wilder", "album": "...For Hard Truths", "trackNumber": 13, "albumOrder": 13, "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-i-m-the-problem-cover.png", "audio": "https://www.dropbox.com/scl/fi/ids7g2yo3dxtzfrizv5mn/avery-ivey-im-the-problem-mp3.mp3?rlkey=88bq1w8fq1yg8qj8f7hn9yui7&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/ids7g2yo3dxtzfrizv5mn/avery-ivey-im-the-problem-mp3.mp3?rlkey=88bq1w8fq1yg8qj8f7hn9yui7&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-one-more-bad-decision", "num": "14", "title": "One More Bad Decision", "artist": "Ivey Wilder", "album": "...For Hard Truths", "trackNumber": 14, "albumOrder": 14, "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-one-more-bad-decision-cover.png", "audio": "https://www.dropbox.com/scl/fi/qrkvf0mznamoqo4qimftd/avery-ivey-one-more-bad-decision-mp3.mp3?rlkey=dq021votuokv0zyanqnorwxcg&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/qrkvf0mznamoqo4qimftd/avery-ivey-one-more-bad-decision-mp3.mp3?rlkey=dq021votuokv0zyanqnorwxcg&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-nobody-asked-me", "num": "15", "title": "Nobody Asked Me", "artist": "Ivey Wilder", "album": "...For Hard Truths", "trackNumber": 15, "albumOrder": 15, "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-nobody-asked-me-cover.png", "audio": "https://www.dropbox.com/scl/fi/ag19huywqnip4utelsrqa/avery-ivey-nobody-asked-me-mp3.mp3?rlkey=vpslswl44q0j41wym6592zn2z&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/ag19huywqnip4utelsrqa/avery-ivey-nobody-asked-me-mp3.mp3?rlkey=vpslswl44q0j41wym6592zn2z&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-hard-truths", "num": "16", "title": "Hard Truths", "artist": "Ivey Wilder", "album": "...For Hard Truths", "trackNumber": 16, "albumOrder": 16, "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-hard-truths-cover.png", "audio": "https://www.dropbox.com/scl/fi/iuwi52vccnrtght02ictt/avery-ivey-for-hard-truths-mp3.mp3?rlkey=9yeuu1q7bu5ugy3439fm587jf&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/iuwi52vccnrtght02ictt/avery-ivey-for-hard-truths-mp3.mp3?rlkey=9yeuu1q7bu5ugy3439fm587jf&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}], "hasVideoSection": true}</script>
+<script id="artist-data" type="application/json">{"artist": {"id": "ivey-wilder", "name": "Ivey Wilder", "genre": "Alt. Rock / Hard Rock", "tagline": "Ivey Wilder is part of the Hello Texas Records roster.", "bio": "Ivey Wilder is part of the Hello Texas Records roster.", "theme": "ivey_wilder", "logo": "images/logos/ivey-wilder-logo.png", "hero": "images/artist/ivey-wilder-hero-photo.png", "discographyBg": "images/artist/ivey-wilder-discography-bg.png", "videoBg": "images/artist/ivey-wilder-video-bg.png", "photos": ["images/artist/ivey-wilder-photo-1.png", "images/artist/ivey-wilder-photo-2.png", "images/artist/ivey-wilder-photo-3.png"]}, "latest": {"title": "Burning Bridges", "artist": "Ivey Wilder", "album": "...For Hard Truths", "type": "Latest Single", "cover": "images/covers/ivey-wilder-burning-bridges-cover.png", "image": "images/covers/ivey-wilder-burning-bridges-cover.png", "audio": "https://www.dropbox.com/scl/fi/yn1bx0irycyb147ngey9j/ivey-wilder-burning-bridges-mp3.mp3?rlkey=yc3uian4ji5sc8j3kkmxuce4o&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/yn1bx0irycyb147ngey9j/ivey-wilder-burning-bridges-mp3.mp3?rlkey=yc3uian4ji5sc8j3kkmxuce4o&raw=1", "videos": [{"title": "burning bridges", "youtube": "https://youtu.be/GpTztr6jvBU", "order": 1}]}, "songs": [{"id": "ivey-wilder-almost-apologies", "num": "01", "title": "Almost Apologies", "artist": "Ivey Wilder", "album": "...For Hard Truths", "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-almost-apologies-cover.png", "audio": "https://www.dropbox.com/scl/fi/7x08t7adaa8svvwhtf9kl/avery-ivey-almost-apologies.mp3.mp3?rlkey=chff1lxg2zy4weo10yjl3coub&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/7x08t7adaa8svvwhtf9kl/avery-ivey-almost-apologies.mp3.mp3?rlkey=chff1lxg2zy4weo10yjl3coub&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-always-the-almost", "num": "02", "title": "Always the Almost", "artist": "Ivey Wilder", "album": "...For Hard Truths", "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-always-the-almost-cover.png", "audio": "https://www.dropbox.com/scl/fi/euaozyd411gkpifibvz6k/ivey-wilder-always-the-almost-mp3-rock.mp3?rlkey=fe0kyh12vjozq4crpegy7j2to&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/euaozyd411gkpifibvz6k/ivey-wilder-always-the-almost-mp3-rock.mp3?rlkey=fe0kyh12vjozq4crpegy7j2to&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-burning-bridges", "num": "03", "title": "Burning Bridges", "artist": "Ivey Wilder", "album": "...For Hard Truths", "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": true, "cover": "images/covers/ivey-wilder-burning-bridges-cover.png", "audio": "https://www.dropbox.com/scl/fi/yn1bx0irycyb147ngey9j/ivey-wilder-burning-bridges-mp3.mp3?rlkey=yc3uian4ji5sc8j3kkmxuce4o&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/yn1bx0irycyb147ngey9j/ivey-wilder-burning-bridges-mp3.mp3?rlkey=yc3uian4ji5sc8j3kkmxuce4o&raw=1", "videos": [{"title": "burning bridges", "youtube": "https://youtu.be/GpTztr6jvBU", "order": 1}], "includeOnRadio": true, "includeOnHomepage": true, "explicit": false, "tags": []}, {"id": "ivey-wilder-can-t-take-it-back", "num": "04", "title": "Can't Take It Back", "artist": "Ivey Wilder", "album": "...For Hard Truths", "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-can-t-take-it-back-cover.png", "audio": "https://www.dropbox.com/scl/fi/a0ulheloq4fh2mfyjm7mj/avery-ivey-cant-take-it-back.mp3.mp3?rlkey=u5u2pi7hn0s2f67nz0gt59c7s&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/a0ulheloq4fh2mfyjm7mj/avery-ivey-cant-take-it-back.mp3.mp3?rlkey=u5u2pi7hn0s2f67nz0gt59c7s&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-chaos-comfort", "num": "05", "title": "Chaos Comfort", "artist": "Ivey Wilder", "album": "...For Hard Truths", "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-chaos-comfort-cover.png", "audio": "https://www.dropbox.com/scl/fi/31dcaq6umpqeuztyzfnl5/ivey-wilder-chaos-comfort-mp3.mp3?rlkey=x76ge48y5098gcorjauky9un4&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/31dcaq6umpqeuztyzfnl5/ivey-wilder-chaos-comfort-mp3.mp3?rlkey=x76ge48y5098gcorjauky9un4&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-glass-houses", "num": "06", "title": "Glass Houses", "artist": "Ivey Wilder", "album": "...For Hard Truths", "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-glass-houses-cover.png", "audio": "https://www.dropbox.com/scl/fi/yuzel13k3dokdb6nfrub4/ivey-wilder-glass-houses-mp3.mp3?rlkey=n8b0ve74paf1vkh3v5ckowd8i&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/yuzel13k3dokdb6nfrub4/ivey-wilder-glass-houses-mp3.mp3?rlkey=n8b0ve74paf1vkh3v5ckowd8i&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-hard-truths", "num": "07", "title": "Hard Truths", "artist": "Ivey Wilder", "album": "...For Hard Truths", "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-hard-truths-cover.png", "audio": "https://www.dropbox.com/scl/fi/iuwi52vccnrtght02ictt/avery-ivey-for-hard-truths-mp3.mp3?rlkey=9yeuu1q7bu5ugy3439fm587jf&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/iuwi52vccnrtght02ictt/avery-ivey-for-hard-truths-mp3.mp3?rlkey=9yeuu1q7bu5ugy3439fm587jf&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-i-m-the-problem", "num": "08", "title": "I'm the Problem", "artist": "Ivey Wilder", "album": "...For Hard Truths", "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-i-m-the-problem-cover.png", "audio": "https://www.dropbox.com/scl/fi/ids7g2yo3dxtzfrizv5mn/avery-ivey-im-the-problem-mp3.mp3?rlkey=88bq1w8fq1yg8qj8f7hn9yui7&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/ids7g2yo3dxtzfrizv5mn/avery-ivey-im-the-problem-mp3.mp3?rlkey=88bq1w8fq1yg8qj8f7hn9yui7&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-lookin-okay", "num": "09", "title": "Lookin' Okay", "artist": "Ivey Wilder", "album": "...For Hard Truths", "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-lookin-okay-cover.png", "audio": "https://www.dropbox.com/scl/fi/kpztjnqnyfbksa8d5h2b9/ivey-wilder-lookin-okay-mp3-rock.mp3?rlkey=k2ypg4m5rqsb6dwntp1i4bn8j&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/kpztjnqnyfbksa8d5h2b9/ivey-wilder-lookin-okay-mp3-rock.mp3?rlkey=k2ypg4m5rqsb6dwntp1i4bn8j&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-main-character", "num": "10", "title": "Main Character", "artist": "Ivey Wilder", "album": "...For Hard Truths", "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-main-character-cover.png", "audio": "https://www.dropbox.com/scl/fi/tl773rvzo5yt77nxwoivk/ivey-wilder-main-character-mp3.mp3?rlkey=wbzx893crsupp6u7puh5glrt4&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/tl773rvzo5yt77nxwoivk/ivey-wilder-main-character-mp3.mp3?rlkey=wbzx893crsupp6u7puh5glrt4&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-nobody-asked-me", "num": "11", "title": "Nobody Asked Me", "artist": "Ivey Wilder", "album": "...For Hard Truths", "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-nobody-asked-me-cover.png", "audio": "https://www.dropbox.com/scl/fi/ag19huywqnip4utelsrqa/avery-ivey-nobody-asked-me-mp3.mp3?rlkey=vpslswl44q0j41wym6592zn2z&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/ag19huywqnip4utelsrqa/avery-ivey-nobody-asked-me-mp3.mp3?rlkey=vpslswl44q0j41wym6592zn2z&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-one-more-bad-decision", "num": "12", "title": "One More Bad Decision", "artist": "Ivey Wilder", "album": "...For Hard Truths", "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-one-more-bad-decision-cover.png", "audio": "https://www.dropbox.com/scl/fi/qrkvf0mznamoqo4qimftd/avery-ivey-one-more-bad-decision-mp3.mp3?rlkey=dq021votuokv0zyanqnorwxcg&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/qrkvf0mznamoqo4qimftd/avery-ivey-one-more-bad-decision-mp3.mp3?rlkey=dq021votuokv0zyanqnorwxcg&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-people-pleaser-rest-in-peace", "num": "13", "title": "People Pleaser (Rest In Peace)", "artist": "Ivey Wilder", "album": "...For Hard Truths", "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-people-pleaser-rest-in-peace-cover.png", "audio": "https://www.dropbox.com/scl/fi/lp84m87nvizsdltwgvseg/ivey-wilder-people-pleaser-mp3.mp3?rlkey=i1tg5nl8ury8u2aa3n3tldlkc&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/lp84m87nvizsdltwgvseg/ivey-wilder-people-pleaser-mp3.mp3?rlkey=i1tg5nl8ury8u2aa3n3tldlkc&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-same-damn-thing", "num": "14", "title": "Same Damn Thing", "artist": "Ivey Wilder", "album": "...For Hard Truths", "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-same-damn-thing-cover.png", "audio": "https://www.dropbox.com/scl/fi/4xbuslph1n4e8ocbfkc5e/ivey-wilder-same-damn-thing-mp3.mp3?rlkey=javre2g419yanbmha1u47frqx&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/4xbuslph1n4e8ocbfkc5e/ivey-wilder-same-damn-thing-mp3.mp3?rlkey=javre2g419yanbmha1u47frqx&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-static", "num": "15", "title": "Static", "artist": "Ivey Wilder", "album": "...For Hard Truths", "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-static-cover.png", "audio": "https://www.dropbox.com/scl/fi/bmb93jc6gifxeuu57p442/avery-ivey-static-mp3.mp3?rlkey=3ic9cwhrcvb8whd3iuq68os2j&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/bmb93jc6gifxeuu57p442/avery-ivey-static-mp3.mp3?rlkey=3ic9cwhrcvb8whd3iuq68os2j&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}, {"id": "ivey-wilder-the-long-way-down", "num": "16", "title": "The Long Way Down", "artist": "Ivey Wilder", "album": "...For Hard Truths", "albumCover": "images/covers/ivey-wilder-for-hard-truths-ALBUM-cover.png", "type": "album-track", "isLatest": false, "cover": "images/covers/ivey-wilder-the-long-way-down-cover.png", "audio": "https://www.dropbox.com/scl/fi/8abqdzad99uchgkwgzl2q/avery-ivey-the-long-way-down-mp3.mp3?rlkey=fvc0ioxg5kyv6fb4cxd5qxhax&raw=1", "audioSrc": "https://www.dropbox.com/scl/fi/8abqdzad99uchgkwgzl2q/avery-ivey-the-long-way-down-mp3.mp3?rlkey=fvc0ioxg5kyv6fb4cxd5qxhax&raw=1", "videos": [], "includeOnRadio": true, "includeOnHomepage": false, "explicit": false, "tags": []}], "hasVideoSection": true}</script>
 <script>
 const DATA = JSON.parse(document.getElementById('artist-data').textContent);
 const SONGS = DATA.songs || [];
@@ -933,26 +912,6 @@ function videoUrl(song) {
   const videos = Array.isArray(song.videos) ? song.videos : [];
   if (!videos.length) return '';
   return videos[0].youtube || videos[0].url || videos[0].href || '';
-}
-function youtubeEmbedUrl(url) {
-  const value = String(url || '').trim();
-  if (!value) return '';
-  try {
-    const u = new URL(value);
-    let id = '';
-    if (u.hostname.includes('youtu.be')) {
-      id = u.pathname.replace('/', '');
-    } else if (u.searchParams.get('v')) {
-      id = u.searchParams.get('v');
-    } else if (u.pathname.includes('/embed/')) {
-      id = u.pathname.split('/embed/')[1].split('/')[0];
-    } else if (u.pathname.includes('/shorts/')) {
-      id = u.pathname.split('/shorts/')[1].split('/')[0];
-    }
-    return id ? `https://www.youtube.com/embed/${id}` : value;
-  } catch (e) {
-    return value;
-  }
 }
 function videoMarkup(song) {
   const url = videoUrl(song);
@@ -979,45 +938,17 @@ function renderLatest() {
 function renderVideo() {
   const container = document.getElementById('video-render');
   if (!container) return;
-
-  const videoSongs = SONGS
-    .filter(s => videoUrl(s))
-    .sort((a, b) => {
-      const av = Array.isArray(a.videos) && a.videos.length ? (a.videos[0].order ?? a.videos[0].videoOrder ?? 9999) : 9999;
-      const bv = Array.isArray(b.videos) && b.videos.length ? (b.videos[0].order ?? b.videos[0].videoOrder ?? 9999) : 9999;
-      return parseInt(av, 10) - parseInt(bv, 10) || String(a.title || '').localeCompare(String(b.title || ''));
-    });
-
-  if (!videoSongs.length) {
+  const song = SONGS.find(s => videoUrl(s)) || SONGS.find(s => s.isLatest) || SONGS[0];
+  if (!song || !videoUrl(song)) {
     container.innerHTML = '<div class="video-coming-soon visible"><div class="play-triangle"></div><strong>Video Coming Soon</strong><span>' + esc(DATA.artist.name) + ' does not have a video assigned yet. The video system is installed and ready.</span></div>';
     return;
   }
-
+  const thumb = song.cover || song.albumCover || '';
   container.innerHTML = `
-    <div class="video-grid">
-      ${videoSongs.map(song => `
-        <div class="video-card video-card-embed">
-          <div class="video-embed-wrap">
-            <iframe
-              src="${esc(youtubeEmbedUrl(videoUrl(song)))}"
-              title="${esc(song.title)} video"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-          </div>
-          <div class="video-card-title">${esc(song.title)}</div>
-          <div class="video-card-actions">
-            <a class="track-badge" href="${esc(videoUrl(song))}" target="_blank" rel="noreferrer">Watch on YouTube</a>
-          </div>
-        </div>
-      `).join('')}
-    </div>
-  `;
-}
-function trackOrder(song) {
-  const raw = song.trackNumber ?? song.albumOrder ?? song.num ?? 9999;
-  const n = parseInt(raw, 10);
-  return Number.isFinite(n) ? n : 9999;
+    <div class="video-thumb has-video" onclick="window.open('${esc(videoUrl(song))}','_blank')">
+      <img src="${esc(thumb)}" alt="${esc(song.title)} video">
+      <div class="video-play-overlay"><div class="video-play-circle">&#9654;</div></div>
+    </div>`;
 }
 function renderAlbums() {
   const root = document.getElementById('albums');
@@ -1038,12 +969,11 @@ function renderAlbums() {
   let html = '<div class="discography-header"><div class="section-eyebrow">Latest Releases</div><h2 class="section-title">Discography</h2><div class="rule"></div></div>';
 
   Array.from(albums.entries()).forEach(([album, songs], idx) => {
-    const orderedSongs = [...songs].sort((a, b) => trackOrder(a) - trackOrder(b) || String(a.title || '').localeCompare(String(b.title || '')));
-    const cover = orderedSongs.find(s => s.albumCover)?.albumCover || songCover(orderedSongs[0]) || '';
+    const cover = songs.find(s => s.albumCover)?.albumCover || songCover(songs[0]) || '';
     const sideClass = idx % 2 ? 'cover-right' : 'cover-left';
 
-    const trackRows = orderedSongs.map((song, i) => {
-      const latestBadge = (song.isLatest ? '<span class="track-badge">Latest</span>' : '') + (videoUrl(song) ? ' <a class="track-badge" target="_blank" rel="noreferrer" href="' + esc(videoUrl(song)) + '">Watch Video</a>' : '');
+    const trackRows = songs.map((song, i) => {
+      const latestBadge = song.isLatest ? '<span class="track-badge">Latest</span>' : '';
       return `
         <div class="track-row">
           <div class="track-num">${String(i + 1).padStart(2, '0')}</div>
@@ -1054,7 +984,7 @@ function renderAlbums() {
       `;
     }).join('');
 
-    const songCards = orderedSongs.map(song => `
+    const songCards = songs.map(song => `
       <div class="release-card" onclick="playSongById('${esc(song.id)}')">
         <div class="release-art">
           <img src="${esc(songCover(song))}" alt="${esc(song.title)}">
@@ -1062,7 +992,6 @@ function renderAlbums() {
         </div>
         <div class="release-title">${esc(song.title)}</div>
         <div class="release-album">${esc(song.album || '')}</div>
-        ${videoUrl(song) ? `<a class="track-badge" target="_blank" rel="noreferrer" href="${esc(videoUrl(song))}" onclick="event.stopPropagation()">Watch Video</a>` : ''}
       </div>
     `).join('');
 
