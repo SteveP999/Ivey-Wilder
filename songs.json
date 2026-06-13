@@ -135,14 +135,9 @@
     "audioSrc": "https://www.dropbox.com/scl/fi/yn1bx0irycyb147ngey9j/ivey-wilder-burning-bridges-mp3.mp3?rlkey=yc3uian4ji5sc8j3kkmxuce4o&raw=1",
     "videos": [
       {
-        "title": "burning bridges",
-        "youtube": "https://youtu.be/GpTztr6jvBU",
-        "order": 1
-      },
-      {
         "title": "Burning Bridges",
         "youtube": "https://youtu.be/eOq1aDyacmc",
-        "order": 2
+        "order": 1
       }
     ],
     "includeOnRadio": true,
