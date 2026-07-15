@@ -17,7 +17,8 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "ivey-wilder-lookin-okay",
@@ -37,7 +38,8 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "ivey-wilder-people-pleaser-rest-in-peace",
@@ -57,7 +59,12 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {
+      "spotify": "https://open.spotify.com/track/0okFguBwiF7mxnRAezVmG5?si=f2900cb7f9b34445",
+      "apple": "https://music.apple.com/us/song/people-pleaser-rest-in-peace/6787109358",
+      "youtubeMusic": "https://music.youtube.com/playlist?list=OLAK5uy_nd7pIfH0QOaVx_mNRxvmleXmLnItvRfWQ&si=sZyKM4ZXWjMu87UT"
+    }
   },
   {
     "id": "ivey-wilder-chaos-comfort",
@@ -77,7 +84,8 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "ivey-wilder-same-damn-thing",
@@ -97,7 +105,8 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "ivey-wilder-always-the-almost",
@@ -117,7 +126,8 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "ivey-wilder-burning-bridges",
@@ -143,7 +153,12 @@
     "includeOnRadio": true,
     "includeOnHomepage": true,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {
+      "spotify": "https://open.spotify.com/track/1tRq5AlUjSGIyARHSQCuRS?si=263fb5e5d1dc400c",
+      "apple": "https://music.apple.com/us/song/burning-bridges/6786641747",
+      "youtubeMusic": "https://music.youtube.com/playlist?list=OLAK5uy_lRG6OtjHnmID2C4eN7WPzjnCy2MZ0nmrA&si=aZbs0rEWzgi9Cxt_"
+    }
   },
   {
     "id": "ivey-wilder-glass-houses",
@@ -163,7 +178,8 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "ivey-wilder-static",
@@ -183,7 +199,8 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "ivey-wilder-the-long-way-down",
@@ -203,7 +220,8 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "ivey-wilder-can-t-take-it-back",
@@ -223,7 +241,8 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "ivey-wilder-almost-apologies",
@@ -243,7 +262,8 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "ivey-wilder-i-m-the-problem",
@@ -263,7 +283,8 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "ivey-wilder-one-more-bad-decision",
@@ -283,7 +304,8 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "ivey-wilder-nobody-asked-me",
@@ -303,7 +325,8 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "ivey-wilder-hard-truths",
@@ -323,7 +346,8 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "ivey-wilder-removing-the-rear-view",
@@ -343,7 +367,8 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   },
   {
     "id": "ivey-wilder-tomorrow-never-comes",
@@ -363,6 +388,7 @@
     "includeOnRadio": true,
     "includeOnHomepage": false,
     "explicit": false,
-    "tags": []
+    "tags": [],
+    "streaming": {}
   }
 ]
