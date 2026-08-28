@@ -411,5 +411,26 @@
     "explicit": false,
     "tags": [],
     "streaming": {}
+  },
+  {
+    "id": "ivey-wilder-removing-the-rear-view-2",
+    "num": "20",
+    "title": "Removing the Rear View",
+    "artist": "Ivey Wilder",
+    "album": "Black and White",
+    "trackNumber": 20,
+    "albumOrder": 20,
+    "albumCover": "images/covers/ivey-wilder-black-and-white-ALBUM-cover.png",
+    "type": "single",
+    "isLatest": true,
+    "cover": "images/covers/ivey-wilder-removing-the-rear-view-cover.png",
+    "audio": "https://www.dropbox.com/scl/fi/973trytjzj4a9pagqo26s/avery-ivey-removing-the-rear-view-mp3.mp3?rlkey=pfwyeany8ofxtlzm4ic0cn78n&st=v3lufaux&raw=1",
+    "audioSrc": "https://www.dropbox.com/scl/fi/973trytjzj4a9pagqo26s/avery-ivey-removing-the-rear-view-mp3.mp3?rlkey=pfwyeany8ofxtlzm4ic0cn78n&st=v3lufaux&raw=1",
+    "videos": [],
+    "includeOnRadio": true,
+    "includeOnHomepage": true,
+    "explicit": false,
+    "tags": [],
+    "streaming": {}
   }
 ]
