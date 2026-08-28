@@ -2,18 +2,12 @@
   "artist": "Ivey Wilder",
   "latestUrl": "latest.json",
   "featuredTrack": {
-    "title": "Burning Bridges",
+    "title": "The Truth Don't Lie",
     "artist": "Ivey Wilder",
-    "album": "...For Hard Truths",
-    "cover": "images/covers/ivey-wilder-burning-bridges-cover.png",
-    "audioSrc": "https://www.dropbox.com/scl/fi/yn1bx0irycyb147ngey9j/ivey-wilder-burning-bridges-mp3.mp3?rlkey=yc3uian4ji5sc8j3kkmxuce4o&raw=1",
-    "videos": [
-      {
-        "title": "Burning Bridges",
-        "youtube": "https://youtu.be/eOq1aDyacmc",
-        "order": 1
-      }
-    ]
+    "album": "Black and White",
+    "cover": "images/covers/ivey-wilder-the-truth-dont-lie-cover.png",
+    "audioSrc": "https://www.dropbox.com/scl/fi/bj2nl9dkcvhct8401lgf8/IVEY-WILDER-Truth-Don-t-Lie.mp3?rlkey=ob8bomdpoe5rn9qoavspqazxg&st=rss7q639&raw=1",
+    "videos": []
   },
   "tracks": [
     {
@@ -153,8 +147,32 @@
     {
       "title": "Removing the Rear View",
       "artist": "Ivey Wilder",
-      "album": "Singles",
+      "album": "Black and White",
       "cover": "images/covers/ivey-wilder-removing-the-rear-view-cover.png",
+      "audioSrc": "https://www.dropbox.com/scl/fi/973trytjzj4a9pagqo26s/avery-ivey-removing-the-rear-view-mp3.mp3?rlkey=pfwyeany8ofxtlzm4ic0cn78n&st=v3lufaux&raw=1",
+      "videos": []
+    },
+    {
+      "title": "The Truth Don't Lie",
+      "artist": "Ivey Wilder",
+      "album": "Black and White",
+      "cover": "images/covers/ivey-wilder-the-truth-dont-lie-cover.png",
+      "audioSrc": "https://www.dropbox.com/scl/fi/bj2nl9dkcvhct8401lgf8/IVEY-WILDER-Truth-Don-t-Lie.mp3?rlkey=ob8bomdpoe5rn9qoavspqazxg&st=rss7q639&raw=1",
+      "videos": []
+    },
+    {
+      "title": "Tomorrow Never Comes",
+      "artist": "Ivey Wilder",
+      "album": "Black and White",
+      "cover": "images/covers/ivey-wilder-tomorrow-never-comes-cover.png",
+      "audioSrc": "https://www.dropbox.com/scl/fi/7bdpevq44m491ygp0gk5i/avery-ivey-tomorrow-never-comes-mp3.mp3?rlkey=2qx7l8yjjnwb2wyiaptkpryau&st=wxiof867&raw=1",
+      "videos": []
+    },
+    {
+      "title": "Removing the Rear View",
+      "artist": "Ivey Wilder",
+      "album": "Singles",
+      "cover": "images/covers/avery-ivey-album-somewhere-in-the-middle/avery-ivey-removing-the-rear-view-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/973trytjzj4a9pagqo26s/Avery-Ivey-Removing-the-Rear-View-Mastered-MP3.mp3?rlkey=pfwyeany8ofxtlzm4ic0cn78n&raw=1",
       "videos": []
     },
@@ -162,7 +180,7 @@
       "title": "Tomorrow Never Comes",
       "artist": "Ivey Wilder",
       "album": "Singles",
-      "cover": "images/covers/ivey-wilder-tomorrow-never-comes-cover.png",
+      "cover": "images/covers/avery-ivey-album-somewhere-in-the-middle/avery-ivey-tomorrow-never-comes-cover.png",
       "audioSrc": "https://www.dropbox.com/scl/fi/7bdpevq44m491ygp0gk5i/avery-ivey-tomorrow-never-comes-mp3.mp3?rlkey=2qx7l8yjjnwb2wyiaptkpryau&raw=1",
       "videos": []
     }

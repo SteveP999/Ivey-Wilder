@@ -1,17 +1,11 @@
 {
-  "title": "Burning Bridges",
+  "title": "The Truth Don't Lie",
   "artist": "Ivey Wilder",
-  "album": "...For Hard Truths",
+  "album": "Black and White",
   "type": "Latest Single",
-  "cover": "images/covers/ivey-wilder-burning-bridges-cover.png",
-  "image": "images/covers/ivey-wilder-burning-bridges-cover.png",
-  "audio": "https://www.dropbox.com/scl/fi/yn1bx0irycyb147ngey9j/ivey-wilder-burning-bridges-mp3.mp3?rlkey=yc3uian4ji5sc8j3kkmxuce4o&raw=1",
-  "audioSrc": "https://www.dropbox.com/scl/fi/yn1bx0irycyb147ngey9j/ivey-wilder-burning-bridges-mp3.mp3?rlkey=yc3uian4ji5sc8j3kkmxuce4o&raw=1",
-  "videos": [
-    {
-      "title": "Burning Bridges",
-      "youtube": "https://youtu.be/eOq1aDyacmc",
-      "order": 1
-    }
-  ]
+  "cover": "images/covers/ivey-wilder-the-truth-dont-lie-cover.png",
+  "image": "images/covers/ivey-wilder-the-truth-dont-lie-cover.png",
+  "audio": "https://www.dropbox.com/scl/fi/bj2nl9dkcvhct8401lgf8/IVEY-WILDER-Truth-Don-t-Lie.mp3?rlkey=ob8bomdpoe5rn9qoavspqazxg&st=rss7q639&raw=1",
+  "audioSrc": "https://www.dropbox.com/scl/fi/bj2nl9dkcvhct8401lgf8/IVEY-WILDER-Truth-Don-t-Lie.mp3?rlkey=ob8bomdpoe5rn9qoavspqazxg&st=rss7q639&raw=1",
+  "videos": []
 }
