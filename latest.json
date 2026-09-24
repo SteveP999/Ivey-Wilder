@@ -1,17 +1,11 @@
 {
-  "title": "Burning Bridges",
+  "title": "If I Know Me",
   "artist": "Ivey Wilder",
-  "album": "...For Hard Truths",
+  "album": "Black and White",
   "type": "Latest Single",
-  "cover": "images/covers/ivey-wilder-burning-bridges-cover.png",
-  "image": "images/covers/ivey-wilder-burning-bridges-cover.png",
-  "audio": "https://www.dropbox.com/scl/fi/yn1bx0irycyb147ngey9j/ivey-wilder-burning-bridges-mp3.mp3?rlkey=yc3uian4ji5sc8j3kkmxuce4o&raw=1",
-  "audioSrc": "https://www.dropbox.com/scl/fi/yn1bx0irycyb147ngey9j/ivey-wilder-burning-bridges-mp3.mp3?rlkey=yc3uian4ji5sc8j3kkmxuce4o&raw=1",
-  "videos": [
-    {
-      "youtube": "https://youtu.be/eOq1aDyacmc",
-      "title": "Official Video",
-      "order": 1
-    }
-  ]
+  "cover": "images/covers/ivey-wilder-if-i-know-me-cover.png",
+  "image": "images/covers/ivey-wilder-if-i-know-me-cover.png",
+  "audio": "https://www.dropbox.com/scl/fi/8o4r9wpp6aeinhk5xym60/If-I-Know-Me-Ivey-Wilder-Dark-Heavy-Post-Grunge-Version-A.wav?rlkey=bqk8045vh8dqainntw4ostru3&st=q2jb7cyw&raw=1",
+  "audioSrc": "https://www.dropbox.com/scl/fi/8o4r9wpp6aeinhk5xym60/If-I-Know-Me-Ivey-Wilder-Dark-Heavy-Post-Grunge-Version-A.wav?rlkey=bqk8045vh8dqainntw4ostru3&st=q2jb7cyw&raw=1",
+  "videos": []
 }

@@ -123,7 +123,11 @@
     "includeOnHomepage": false,
     "explicit": false,
     "tags": [],
-    "streaming": {}
+    "streaming": {
+      "spotify": "",
+      "apple": "",
+      "youtubeMusic": ""
+    }
   },
   {
     "id": "ivey-wilder-burning-bridges",
@@ -255,7 +259,11 @@
     "includeOnHomepage": false,
     "explicit": false,
     "tags": [],
-    "streaming": {}
+    "streaming": {
+      "spotify": "",
+      "apple": "",
+      "youtubeMusic": ""
+    }
   },
   {
     "id": "ivey-wilder-i-m-the-problem",
@@ -352,7 +360,7 @@
     "albumCover": "images/covers/ivey-wilder-black-and-white-ALBUM-cover.png",
     "type": "single",
     "isLatest": false,
-    "cover": "images/covers/avery-ivey-album-somewhere-in-the-middle/avery-ivey-removing-the-rear-view-cover.png",
+    "cover": "images/covers/ivey-wilder-removing-the-rear-view-cover.png",
     "audio": "https://www.dropbox.com/scl/fi/973trytjzj4a9pagqo26s/Avery-Ivey-Removing-the-Rear-View-Mastered-MP3.mp3?rlkey=pfwyeany8ofxtlzm4ic0cn78n&raw=1",
     "audioSrc": "https://www.dropbox.com/scl/fi/973trytjzj4a9pagqo26s/Avery-Ivey-Removing-the-Rear-View-Mastered-MP3.mp3?rlkey=pfwyeany8ofxtlzm4ic0cn78n&raw=1",
     "videos": [],
@@ -360,7 +368,11 @@
     "includeOnHomepage": false,
     "explicit": false,
     "tags": [],
-    "streaming": {}
+    "streaming": {
+      "spotify": "",
+      "apple": "",
+      "youtubeMusic": ""
+    }
   },
   {
     "id": "ivey-wilder-tomorrow-never-comes",
@@ -373,7 +385,7 @@
     "albumCover": "images/covers/ivey-wilder-black-and-white-ALBUM-cover.png",
     "type": "single",
     "isLatest": false,
-    "cover": "images/covers/avery-ivey-album-somewhere-in-the-middle/avery-ivey-tomorrow-never-comes-cover.png",
+    "cover": "images/covers/ivey-wilder-tomorrow-never-comes-cover.png",
     "audio": "https://www.dropbox.com/scl/fi/7bdpevq44m491ygp0gk5i/avery-ivey-tomorrow-never-comes-mp3.mp3?rlkey=2qx7l8yjjnwb2wyiaptkpryau&raw=1",
     "audioSrc": "https://www.dropbox.com/scl/fi/7bdpevq44m491ygp0gk5i/avery-ivey-tomorrow-never-comes-mp3.mp3?rlkey=2qx7l8yjjnwb2wyiaptkpryau&raw=1",
     "videos": [],
@@ -381,7 +393,11 @@
     "includeOnHomepage": false,
     "explicit": false,
     "tags": [],
-    "streaming": {}
+    "streaming": {
+      "spotify": "",
+      "apple": "",
+      "youtubeMusic": ""
+    }
   },
   {
     "id": "ivey-wilder-the-truth-dont-lie",
@@ -402,17 +418,21 @@
     "includeOnHomepage": false,
     "explicit": false,
     "tags": [],
-    "streaming": {}
+    "streaming": {
+      "spotify": "",
+      "apple": "",
+      "youtubeMusic": ""
+    }
   },
   {
     "id": "ivey-wilder-if-i-know-me",
-    "num": "04",
+    "num": "20",
     "title": "If I Know Me",
     "artist": "Ivey Wilder",
     "album": "Black and White",
     "trackNumber": 4,
     "albumOrder": 4,
-    "albumCover": "",
+    "albumCover": "images/covers/ivey-wilder-black-and-white-ALBUM-cover.png",
     "type": "single",
     "isLatest": true,
     "cover": "images/covers/ivey-wilder-if-i-know-me-cover.png",
